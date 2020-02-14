@@ -1,0 +1,2 @@
+I implement pwnlib to get the task07flag permission. Firstly I catch the current bufferaddr and change it to little endian. Secondly, I implement asm(setreuid) and asm(amd64.linux.sh) as the part of input, so that I can run the shell after interactive.
+Then fill the remaining blanks until input to 136 bits. Next step is add the bufferaddr as return address in the last 8bits and send all of them as input to the program.
