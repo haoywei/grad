@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1575269143 source:d:\art\main.cpp
+	<vector>
+	<iostream>
+	<stdio.h>
+	<vector>
+	<stdlib.h>
+	<graphics.h>
+
